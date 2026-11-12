@@ -285,9 +285,13 @@ The `.dev.bash` version retains all maintained Doxygen comments; the ordinary ar
 
 ## Project governance
 
-This project adopts the verified `coding_standards@v2.1.0` release from [wesley-dean/coding_standards](https://github.com/wesley-dean/coding_standards), materialized at [doc/standards](doc/standards/).  [`.codingstandardrc`](.codingstandardrc) records its immutable version and released archive digest.  Applicable imported standards govern maintained work unless an Accepted local ADR or explicit local policy refines them.  Never edit imported standards locally.
+This project adopts the verified `coding_standards@v3.2.0` release from [wesley-dean/coding_standards](https://github.com/wesley-dean/coding_standards), materialized at [doc/standards](doc/standards/).  [`.codingstandardrc`](.codingstandardrc) records its immutable version and released archive digest.  Applicable imported standards govern maintained work unless an Accepted local ADR or explicit local policy refines them.  Never edit imported standards locally.
 
 Start with [AGENTS.md](AGENTS.md), [doc/decisions.md](doc/decisions.md), [doc/specification.md](doc/specification.md), [doc/threat-model.md](doc/threat-model.md), and [doc/handoff.md](doc/handoff.md).  The original template decisions remain in `doc/adr/` and project-specific decisions begin at ADR-018.
+
+## Dependabot maintenance
+
+The repository schedules routine GitHub Actions dependency version updates weekly, with a seven-day cooldown and a single broad major/minor/patch group. Security updates remain independent of that routine schedule. A group containing any major version upgrade requires heightened manual review; the existing non-major-only Dependabot auto-merge condition is unchanged. Existing Dependabot PRs are not assumed to be superseded by the new grouping. See [ADR-056](doc/adr/ADR-056-consolidate-github-actions-dependabot-maintenance.md) for the decision, review boundaries, and limitations.
 
 ## Plaintext / GPG migration (planned operational procedure)
 
