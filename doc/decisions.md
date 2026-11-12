@@ -222,7 +222,7 @@ See [ADR-023](adr/ADR-023-build-artifacts-dependencies-and-execution-examples.md
 
 ### ADR-024: Govern Maintained Content by a Verified Released Coding Standards Snapshot
 
-The project adopts coding_standards@v2.1.0 as a complete committed snapshot, with version and digest recorded in .codingstandardrc.  Relevant imported standards are mandatory unless an Accepted local ADR or explicit policy refines them.  Imported files must remain unmodified, and future updates require a reviewed release-specific refresh.  The standards do not become runtime dependencies or automatic update jobs.
+ADR-024 established the verified v2.1.0 adoption policy. The project now pins coding_standards@v3.2.0 as a complete committed snapshot, with version and digest recorded in .codingstandardrc.  Relevant imported standards are mandatory unless an Accepted local ADR or explicit policy refines them.  Imported files must remain unmodified, and future updates require a reviewed release-specific refresh.  The standards do not become runtime dependencies or automatic update jobs.
 
 See [ADR-024](adr/ADR-024-released-coding-standards-governance.md).
 
@@ -635,3 +635,16 @@ activating public issuance. Offline tests with locally CA-signed X.509
 fixtures validate the corrected success and bare-name rejection paths.
 
 See [ADR-055](adr/ADR-055-real-staging-second-lineage-sans.md).
+
+
+### ADR-056: Consolidate Weekly GitHub Actions Dependabot Version Updates
+
+The repository retains weekly GitHub Actions dependency updates and its seven-day
+version-update cooldown, but groups eligible major, minor, and patch releases
+into one routine wildcard group per ecosystem. Security updates remain separate;
+major-containing groups require targeted manual review and remain ineligible
+for the existing non-major-only auto-merge route. Existing Dependabot PRs
+stay open until their updates are independently verified as superseded.
+This operational change does not alter runtime, release, or credential boundaries.
+
+See [ADR-056](adr/ADR-056-consolidate-github-actions-dependabot-maintenance.md).
